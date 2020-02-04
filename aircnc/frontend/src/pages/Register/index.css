@@ -1,0 +1,48 @@
+#register p.title{
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 18px;
+}
+
+#register form{
+    display: flex;
+    flex-direction: column;
+}
+
+#register form label{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#register form input {
+    padding: 0 15px;
+    height: 45px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+#register #password {
+    margin-bottom: 0px;
+}
+
+#register button.btn {
+    border: 0;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+    height: 42px;
+    cursor: pointer;
+    background: #f05a5b;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#register p.warning{
+    color: red;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 3px;
+}
