@@ -27,18 +27,6 @@
     margin-bottom: 0px;
 }
 
-#login button.btn {
-    border: 0;
-    border-radius: 3px;
-    font-weight: bold;
-    color: #fff;
-    height: 42px;
-    cursor: pointer;
-    background: #f05a5b;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
 #login button.btn:last-child {
     margin-bottom: 0px;
     margin-top: 0px;

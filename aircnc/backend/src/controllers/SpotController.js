@@ -12,6 +12,7 @@ module.exports = {
         }
 
         let spot = await Spot.findOne({ thumbnail, company, value, technologies, userId })
+
         if(!spot){
             spot = await Spot.create({ 
                 thumbnail, 
@@ -19,6 +20,10 @@ module.exports = {
                 value, 
                 technologies: technologies.split(',').map(techs => techs.trim()),
                 user : userId
+            }).then(() => {
+                console.log("New spot create with sucess")
+            }).catch(err => {
+                console.log("Error creating spot: ", err)
             })
         }
 

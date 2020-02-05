@@ -15,10 +15,14 @@ module.exports = {
         let booking = Booking.find({user : user_id, spot : spot_id, date})
 
         if(!booking){
-            return res.status(401)
+            booking = await Booking.create({user : user_id, spot : spot_id, date}).then(() => {
+                console.log("New booking create with sucess")
+            }).catch(err => {
+                console.log("Error creating booking: ", err)
+            })
         }
 
-        booking = Booking.create({user : user_id, spot : spot_id, date})
+        
 
         booking.populate('user').populate('spot').exec()
 

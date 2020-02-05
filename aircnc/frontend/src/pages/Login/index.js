@@ -14,6 +14,9 @@ export default function Login(props) {
     const [register, setRegister] = useState('')
 
     useEffect(() => {
+        if(sessionStorage.getItem('token')){
+            props.history.push('/dashboard')
+        }
         if(situation){
             setRegister(situation)
         }

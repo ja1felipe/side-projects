@@ -9,7 +9,15 @@ module.exports = {
         const { password } = req.body
 
         let user = await User.findOne({ email })
-        user = !user ? await User.create({ email, password }) : user
+
+        if(!user){
+            user = await User.create({ email, password }).then(() => {
+                console.log("New user create with sucess")
+            }).catch(err => {
+                console.log("Error creating user: ", err)
+            })
+        }
+        
         return res.json(user)
     },
 
