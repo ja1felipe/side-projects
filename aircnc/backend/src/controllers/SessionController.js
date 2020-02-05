@@ -11,11 +11,8 @@ module.exports = {
         let user = await User.findOne({ email })
 
         if(!user){
-            user = await User.create({ email, password }).then(() => {
-                console.log("New user create with sucess")
-            }).catch(err => {
-                console.log("Error creating user: ", err)
-            })
+            user = await User.create({ email, password })
+            console.log("New user create with sucess")
         }
         
         return res.json(user)

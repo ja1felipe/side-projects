@@ -1,14 +1,22 @@
 import React, { useEffect, useRef } from 'react'
 import './style.css'
+import api from '../../services/api'
 
 export default function Modal(props) {
 
-    useEffect((e) => {
-        console.log(e)
-    }, [])
-
     function onClose(e) {
         props.onClose(e)
+    }
+
+    function deleteSpot(e){
+        api.delete(`/spots/${props.spotId}`, {
+            headers : {
+                Authorization : `Bearer ${sessionStorage.getItem('token')}`
+            }
+        }).then(() => {
+            onClose()
+            props.refreshSpots(e)
+        })
     }
 
     function useOutsideAlerter(ref) {
@@ -41,7 +49,7 @@ export default function Modal(props) {
                 <p>Tem certeza que quer deletar esse <strong>Spot?</strong></p>
                 <div>
                     <button onClick={() => onClose()} className='btn'>Cancelar</button>
-                    <button className='btn'>Confirmar</button>
+                    <button className='btn' onClick={() => deleteSpot()}>Confirmar</button>
                 </div>
             </div>
         </section>

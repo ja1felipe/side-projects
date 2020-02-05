@@ -1,6 +1,9 @@
 const jwt = require('jsonwebtoken')
 const secret = "sadknadksaweqweqw"
 
+/**
+ * Middleware using json web token responsable to authenticate the user
+ */
 module.exports = (req, res, next) => {
     const { authorization } = req.headers
 

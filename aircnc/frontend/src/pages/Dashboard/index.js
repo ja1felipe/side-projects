@@ -9,20 +9,21 @@ export default function Dashboard({ history }) {
     const [show, setShow] = useState(false)
     const [spotId, setSpotId] = useState('')
 
+    async function spotsRequest() {
+        let spotss = await api.get('/dashboard', {
+            headers: {
+                'Authorization': 'Bearer ' + sessionStorage.getItem('token')
+            }
+        })
+        setSpots(spotss.data)
+    }
+
     useEffect(() => {
         if (!sessionStorage.getItem('token')) {
             history.push({
                 pathname: '/',
                 state: { situation: "Você precisa estar logado para ver o dashboard." }
             })
-        }
-        async function spotsRequest() {
-            let spotss = await api.get('/dashboard', {
-                headers: {
-                    'Authorization': 'Bearer ' + sessionStorage.getItem('token')
-                }
-            })
-            setSpots(spotss.data)
         }
         spotsRequest()
     }, [])
@@ -35,7 +36,7 @@ export default function Dashboard({ history }) {
     return (
         
         <section id="dashboard">    
-            <Modal show={show} onClose={openModal} user_id={spotId}></Modal>
+            <Modal show={show} onClose={openModal} spotId={spotId} refreshSpots={spotsRequest}></Modal>
             {spots.length ? <ul> {spots.map(spot => (
                 <li key={spot._id}>
                     
