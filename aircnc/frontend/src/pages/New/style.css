@@ -1,0 +1,27 @@
+#new form{
+    display: flex;
+    flex-direction: column;
+}
+
+#new form label{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#new form input {
+    padding: 0 15px;
+    height: 45px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+#new #password {
+    margin-bottom: 0px;
+}
+
+#new button.btn:last-child {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}

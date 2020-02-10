@@ -53,7 +53,7 @@ export default function Dashboard({ history }) {
             ))} </ul> : <p>Você ainda não cadastrou nenhum Spot. Dê o primeiro passo <strong>cadastre</strong> um agora, basta clicar no botão abaixo.</p>}
 
 
-            <button className="btn">Cadastre um novo Spot</button>
+            <button className="btn" onClick={() => history.push('/dashboard/new')}>Cadastre um novo Spot</button>
         </section>
     )
 }
