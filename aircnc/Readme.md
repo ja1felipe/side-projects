@@ -1,6 +1,6 @@
 <div align="center">
     <a title="Semana OmniStack 9" href="https://github.com/Rocketseat/semana-omnistack-9">
-        <img src=".github/logo.png">
+        <img src="https://github.com/Rocketseat/semana-omnistack-9/blob/master/.github/logo.png">
     </a>
 </div>
 
@@ -9,7 +9,7 @@
    * Sistema de cadastro de novos usários
    * No frontend é possivel editar e excluir um spot
 
-## Tecnologias
+### Tecnologias
    * [NodeJS](https://nodejs.org/en/)
    * [React](https://reactjs.org/)
    * [React Native](https://facebook.github.io/react-native/)
