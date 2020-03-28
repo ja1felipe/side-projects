@@ -6,7 +6,7 @@
 
 ## Mudanças própias(referentes ao projeto inicial proposto)
    * Sistema de autenticação de login
-   * Sistema de cadastro de novos usários
+   * Sistema de cadastro de novos usuários
    * No frontend é possivel editar e excluir um spot
 
 ### Tecnologias
