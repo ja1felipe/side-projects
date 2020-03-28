@@ -29,6 +29,32 @@ module.exports = {
             return res.status(400).json({message: 'New spot to similar to another of the same owner'})
         }
     },
+
+    async update(req, res){
+        const thumbnail = req.file.filename;
+        const { company, value, spotId } = req.body;
+        const { userId } = req;
+        let { technologies } = req.body;
+        technologies = technologies.split(',').map(techs => techs.trim())
+
+        if(!await User.findById(userId)){
+            return res.status(401)
+        }
+
+        let spot = await Spot.findById(spotId)
+
+        if(spot){
+            Spot.updateOne({_id : spotId}, { company, value, thumbnail, technologies })
+            .then(() => {
+                return res.status(200).json({ message: 'Spot updated with sucess.' })
+            })
+            .catch(err => {
+                console.log('Spot update error', err)
+            })
+        }else{
+            res.status(400).json({ message: 'Spot not found' })
+        }
+    },
     
     async index(req, res){
 

@@ -1,0 +1,40 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "uma curiosidade aleatoria",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "curiosity",
+          "slots": [],
+          "samples": [
+            "outra",
+            "quero saber mais uma",
+            "me conte outra",
+            "curiosidade aleatoria",
+            "me fale uma curiosidade aleatoria",
+            "me diga uma curiosidade",
+            "me conte uma curiosidade"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "2"
+}

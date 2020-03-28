@@ -9,6 +9,27 @@
     margin-bottom: 10px;
 }
 
+#new label#thumbnail{
+    border: 1px dashed #ddd;
+    cursor: pointer;
+    height: 160px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+#new input#thumb{
+    display: none;
+}
+
+#new label#thumbnail.hasThumb {
+    border: none;
+}
+
+#new label#thumbnail.hasThumb img{
+    display: none;
+}
 #new form input {
     padding: 0 15px;
     height: 45px;

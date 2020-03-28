@@ -24,6 +24,11 @@ router.post('/login', sessionController.login)
  */
 router.post('/spots', [auth, upload.single('thumbnail')], spotController.store)
 /**
+ * /**
+ * Route responsable to update spots
+ */
+router.put('/spots', [auth, upload.single('thumbnail')], spotController.update)
+/**
  * Route responsable to list dependent of the technologie
  */
 router.get('/spots', auth, spotController.index)

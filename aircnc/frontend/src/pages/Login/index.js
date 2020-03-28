@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import api from '../../services/api'
-import './index.css'
+import './style.css'
 
 
 

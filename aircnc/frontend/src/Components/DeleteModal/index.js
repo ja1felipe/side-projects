@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import './style.css'
 import api from '../../services/api'
 
-export default function Modal(props) {
+export default function DeleteModal(props) {
 
     function onClose(e) {
         props.onClose(e)
